@@ -2,16 +2,15 @@
 
 ## 1. Descripción del proyecto
 
-Para este proyecto s esolicito un programa capaz de analizar archivos de log en el cual, 
-vienen registros con 3 niveles establecidos INFO, WARNING y ERROR, el programa debe leerlos
-y debe respetar el formato establecido tambien tiene que indicar si viene en un formato
-diferente. 
+Para este proyecto se solicitó desarrollar un programa capaz de analizar archivos de logs que contienen registros con tres niveles establecidos: INFO, WARNING y ERROR.
 
-para esto se nos pide utilizar python y la IA como herramienta
+El programa debe leer los registros, verificar que cumplan con el formato establecido e identificar aquellos que presenten errores o inconsistencias.
+
+Para desarrollar esta solución se utilizó Python, con apoyo de inteligencia artificial como herramienta de desarrollo.
 
 ## 2. Uso de inteligencia artificial
 
-La primera parte de la actividad se solicito apoyo a Github Copilot por medio de la extension en Visual Studio Code, se le mando el siguiente pront en el modo de plan
+La primera parte de la actividad consistió en solicitar apoyo a GitHub Copilot mediante su extensión en Visual Studio Code. Se utilizó el modo Plan para establecer los requisitos y las reglas antes de comenzar la implementación.
 
 ### Prompt inicial
 
@@ -51,10 +50,14 @@ Todo esto debes hacerlo en Python.
 
 A partir del prompt inicial, GitHub Copilot comenzó la planificación y solicitó aclaraciones sobre el formato de los registros, los criterios para identificar líneas inválidas y la forma de seleccionar los archivos.
 
-Estas preguntas permitieron definir las reglas antes de comenzar la implementación, como se observa en las sigueintes figuras.
+Estas preguntas permitieron definir las reglas antes de comenzar la implementación, como se observa en las siguientes figuras.
+
 ![Figura 1 - Definición de reglas](Evidencias/Figura_1.png)
+
 ![Figura 2 - Definición de reglas](Evidencias/Figura_2.png)
+
 ![Figura 3 - Definición de reglas](Evidencias/Figura_3.png)
+
 Entre las decisiones tomadas se encuentran:
 
 - Utilizar el formato `[NIVEL] AAAA-MM-DD mensaje`.
@@ -66,14 +69,20 @@ Entre las decisiones tomadas se encuentran:
 - Permitir la selección del archivo mediante una ventana de Windows.
 
 Posteriormente, se solicitó incorporar un desglose de los motivos de WARNING y ERROR, con el objetivo de identificar los problemas más frecuentes dentro de los registros.
-![Figura 4 - Problemas mas frecuentes](Evidencias/Figura_4.png)
+
+![Figura 4 - Problemas más frecuentes](Evidencias/Figura_4.png)
 
 Para presentar las líneas inválidas, Copilot propuso mostrar el número de línea, el contenido original y los motivos del rechazo. Esta recomendación fue evaluada y aceptada por considerarse útil para identificar las inconsistencias durante las pruebas.
-![Figura 5 - Propuesta de copilot](Evidencias/Figura_5.png)
+
+![Figura 5 - Propuesta de Copilot](Evidencias/Figura_5.png)
 
 ## 4. Implementación del programa
 
-Una vez que se creo el plan y revisar que todo este correctamente se aprovo la creancion del programa sin permisos completos si no que se iban solicitando los permisos para editar y al final el resultante fue el siguiente:
+Una vez creado y revisado el plan de desarrollo, se aprobó la implementación del programa utilizando la opción **Implement with Autopilot** de GitHub Copilot.
+
+No se concedieron permisos completos desde el inicio, sino que se fueron autorizando las acciones de edición conforme eran solicitadas.
+
+Al finalizar la implementación, se obtuvo un programa funcional capaz de analizar los archivos de logs y mostrar los resultados en consola.
 
 ![Figura 6 - Resultado](Evidencias/Figura_6.png)
 
@@ -87,23 +96,28 @@ Se utilizó el archivo `logs correctos.txt`, que contenía registros con fechas 
 
 El programa identificó correctamente los registros y mostró los motivos más frecuentes de WARNING y ERROR, incluyendo los casos donde existían empates.
 
-Esperado: 50 registros válidos y 0 inválidos.
-Obtenido: 50 registros válidos y 0 inválidos.
+**Resultados:**
 
-**Evidencia:** 
+- Esperado: 50 registros válidos y 0 inválidos.
+- Obtenido: 50 registros válidos y 0 inválidos.
+
+**Evidencia:**
+
 ![Figura 7 - Evidencia 1](Evidencias/Figura_7.png)
 
-### Prueba 2: Archivo con un formato incossitente
+### Prueba 2: Archivo con formato inconsistente
 
 Se utilizó el archivo `logs inconsistentes.txt`, que contenía registros correctos y otros con fechas inválidas, niveles desconocidos o mensajes incompletos.
 
 El programa identificó correctamente las diez líneas inválidas y explicó los motivos por los cuales fueron rechazadas.
 
-**Prueba 2**
-Esperado: 40 registros válidos y 10 inválidos.
-Obtenido: 40 registros válidos y 10 inválidos.
+**Resultados:**
 
-**Evidencia:** 
+- Esperado: 40 registros válidos y 10 inválidos.
+- Obtenido: 40 registros válidos y 10 inválidos.
+
+**Evidencia:**
+
 ![Figura 8 - Evidencia 2](Evidencias/Figura_8.png)
 
 ## 6. Identificación y mejora de una propuesta de IA
@@ -118,9 +132,10 @@ Copilot incorporó esta modificación y posteriormente se comprobó su funcionam
 
 Este caso demuestra cómo una propuesta de inteligencia artificial puede ser revisada y mejorada mediante decisiones humanas antes de su implementación.
 
+## 7. Reflexión final
 
-## Reflexion final
+Durante el desarrollo de esta solución considero que la IA es una herramienta bastante útil para aumentar la agilidad en la creación de programas. Sin embargo, también aprendí que es necesario establecer parámetros claros, ya que, a pesar de tratarse de un programa relativamente sencillo, fue necesario definir reglas y validaciones para asegurar su correcto funcionamiento.
 
-Durante el desarrollo de esta solucion considero que la IA es una herramienta bastante buena para poder aumentar la agilidad de la creacion de una solucion pero tambien aprendi que hay que establecer bastantes parametros a pesar de ser algo sencillo hay que escribir reglas y establecerlas para que el programa las respete, no hay que dejarse llevar por todas las soluciones que la IA da a veces puede esta correcta pero otras veces equivocada 
+También comprendí que no debemos aceptar automáticamente todas las soluciones propuestas por la IA, porque algunas pueden ser correctas, mientras que otras pueden estar incompletas o necesitar mejoras.
 
 En conclusión, considero que la IA puede facilitar mucho el desarrollo de software, pero las decisiones sobre el funcionamiento del programa y la validación de los resultados deben seguir siendo responsabilidad del desarrollador.
