@@ -1,0 +1,126 @@
+# Analizador de Logs en Python
+
+## 1. Descripción del proyecto
+
+Para este proyecto s esolicito un programa capaz de analizar archivos de log en el cual, 
+vienen registros con 3 niveles establecidos INFO, WARNING y ERROR, el programa debe leerlos
+y debe respetar el formato establecido tambien tiene que indicar si viene en un formato
+diferente. 
+
+para esto se nos pide utilizar python y la IA como herramienta
+
+## 2. Uso de inteligencia artificial
+
+La primera parte de la actividad se solicito apoyo a Github Copilot por medio de la extension en Visual Studio Code, se le mando el siguiente pront en el modo de plan
+
+### Prompt inicial
+
+**Contexto**
+
+Eres un desarrollador experto en Python y en análisis de datos.
+
+**Instrucción**
+
+Crea un programa que lea archivos de registros de log.
+
+Existirán tres tipos de registro: INFO, WARNING y ERROR.
+
+- INFO serían los que están correctos.
+- WARNING serían errores de capa 8.
+- ERROR serían errores asociados al programa.
+
+Tu deber es identificar cada uno de estos tipos de registro y generar un resumen que incluya:
+
+- Total de eventos.
+- Cantidad de eventos por tipo.
+- Número de líneas mal formateadas o incompletas.
+
+Debes mostrar el resultado de forma clara en consola.
+
+**Formato de salida**
+
+Todo esto debes hacerlo en Python.
+
+**Restricciones**
+
+- El programa debe crearse en Python.
+- El usuario debe poder seleccionar el archivo de texto que desea analizar.
+- No debes establecer reglas por ti mismo.
+
+## 3. Planificación y decisiones técnicas
+
+A partir del prompt inicial, GitHub Copilot comenzó la planificación y solicitó aclaraciones sobre el formato de los registros, los criterios para identificar líneas inválidas y la forma de seleccionar los archivos.
+
+Estas preguntas permitieron definir las reglas antes de comenzar la implementación, como se observa en las sigueintes figuras.
+![Figura 1 - Definición de reglas](Evidencias/Figura_1.png)
+![Figura 2 - Definición de reglas](Evidencias/Figura_2.png)
+![Figura 3 - Definición de reglas](Evidencias/Figura_3.png)
+Entre las decisiones tomadas se encuentran:
+
+- Utilizar el formato `[NIVEL] AAAA-MM-DD mensaje`.
+- Considerar válidos únicamente los niveles INFO, WARNING y ERROR.
+- Rechazar registros con fechas inexistentes, incorrectas o posteriores a la fecha actual.
+- Considerar inválidas las líneas que no contengan un mensaje.
+- Contar únicamente los registros válidos en el resumen de eventos.
+- Mostrar por separado la cantidad de registros inválidos.
+- Permitir la selección del archivo mediante una ventana de Windows.
+
+Posteriormente, se solicitó incorporar un desglose de los motivos de WARNING y ERROR, con el objetivo de identificar los problemas más frecuentes dentro de los registros.
+![Figura 4 - Problemas mas frecuentes](Evidencias/Figura_4.png)
+
+Para presentar las líneas inválidas, Copilot propuso mostrar el número de línea, el contenido original y los motivos del rechazo. Esta recomendación fue evaluada y aceptada por considerarse útil para identificar las inconsistencias durante las pruebas.
+![Figura 5 - Propuesta de copilot](Evidencias/Figura_5.png)
+
+## 4. Implementación del programa
+
+Una vez que se creo el plan y revisar que todo este correctamente se aprovo la creancion del programa sin permisos completos si no que se iban solicitando los permisos para editar y al final el resultante fue el siguiente:
+
+![Figura 6 - Resultado](Evidencias/Figura_6.png)
+
+## 5. Evidencia de pruebas
+
+Para comprobar el funcionamiento del programa se utilizaron dos archivos de prueba, cada uno con 50 registros.
+
+### Prueba 1: Archivo con buen formato
+
+Se utilizó el archivo `logs correctos.txt`, que contenía registros con fechas válidas, niveles de severidad reconocidos y mensajes completos.
+
+El programa identificó correctamente los registros y mostró los motivos más frecuentes de WARNING y ERROR, incluyendo los casos donde existían empates.
+
+Esperado: 50 registros válidos y 0 inválidos.
+Obtenido: 50 registros válidos y 0 inválidos.
+
+**Evidencia:** 
+![Figura 7 - Evidencia 1](Evidencias/Figura_7.png)
+
+### Prueba 2: Archivo con un formato incossitente
+
+Se utilizó el archivo `logs inconsistentes.txt`, que contenía registros correctos y otros con fechas inválidas, niveles desconocidos o mensajes incompletos.
+
+El programa identificó correctamente las diez líneas inválidas y explicó los motivos por los cuales fueron rechazadas.
+
+**Prueba 2**
+Esperado: 40 registros válidos y 10 inválidos.
+Obtenido: 40 registros válidos y 10 inválidos.
+
+**Evidencia:** 
+![Figura 8 - Evidencia 2](Evidencias/Figura_8.png)
+
+## 6. Identificación y mejora de una propuesta de IA
+
+Durante la planificación, GitHub Copilot propuso inicialmente un alcance que contemplaba los conteos por severidad, la identificación de registros inválidos y la selección de archivos.
+
+Sin embargo, se identificó que esta propuesta no incluía el desglose de los motivos más frecuentes de WARNING y ERROR, una funcionalidad que se consideraba importante para comprender mejor los problemas registrados.
+
+Por esta razón, se solicitó modificar el alcance para incluir la agrupación de mensajes idénticos y la identificación de las advertencias y errores más frecuentes.
+
+Copilot incorporó esta modificación y posteriormente se comprobó su funcionamiento mediante los archivos de prueba.
+
+Este caso demuestra cómo una propuesta de inteligencia artificial puede ser revisada y mejorada mediante decisiones humanas antes de su implementación.
+
+
+## Reflexion final
+
+Durante el desarrollo de esta solucion considero que la IA es una herramienta bastante buena para poder aumentar la agilidad de la creacion de una solucion pero tambien aprendi que hay que establecer bastantes parametros a pesar de ser algo sencillo hay que escribir reglas y establecerlas para que el programa las respete, no hay que dejarse llevar por todas las soluciones que la IA da a veces puede esta correcta pero otras veces equivocada 
+
+En conclusión, considero que la IA puede facilitar mucho el desarrollo de software, pero las decisiones sobre el funcionamiento del programa y la validación de los resultados deben seguir siendo responsabilidad del desarrollador.

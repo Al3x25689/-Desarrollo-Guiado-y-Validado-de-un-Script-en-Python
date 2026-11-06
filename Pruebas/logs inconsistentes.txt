@@ -1,0 +1,50 @@
+[INFO] 2026-10-23 User logged in
+[INFO] 2026-10-23 User logged out
+[INFO] 2026-10-23 Dashboard loaded
+[INFO] 2026-10-23 Report generated
+[INFO] 2026-10-23 Session started
+[INFO] 2026-10-23 User logged in
+[INFO] 2026-10-23 User logged out
+[INFO] 2026-10-23 Dashboard loaded
+[INFO] 2026-10-23 Report generated
+[INFO] 2026-10-23 Session started
+[INFO] 2026-10-23 User logged in
+[INFO] 2026-10-23 User logged out
+[INFO] 2026-10-23 Dashboard loaded
+[INFO] 2026-10-23 Report generated
+[INFO] 2026-10-23 Session started
+[INFO] 2026-10-23 User logged in
+[INFO] 2026-10-23 User logged out
+[INFO] 2026-10-23 Dashboard loaded
+[INFO] 2026-10-23 Report generated
+[INFO] 2026-10-23 Session started
+[WARNING] 2026-10-24 Invalid password attempt
+[WARNING] 2026-10-24 Unauthorized access attempt
+[WARNING] 2026-10-24 User account locked
+[WARNING] 2026-10-24 Invalid password attempt
+[WARNING] 2026-10-24 Unauthorized access attempt
+[WARNING] 2026-10-24 User account locked
+[WARNING] 2026-10-24 Invalid password attempt
+[WARNING] 2026-10-24 Unauthorized access attempt
+[WARNING] 2026-10-24 User account locked
+[WARNING] 2026-10-24 Invalid password attempt
+[WARNING] 2026-10-24 Unauthorized access attempt
+[WARNING] 2026-10-24 User account locked
+[ERROR] 2026-10-25 Failed to connect to database
+[ERROR] 2026-10-25 User not found
+[ERROR] 2026-10-25 Failed to connect to database
+[ERROR] 2026-10-25 User not found
+[ERROR] 2026-10-25 Failed to connect to database
+[ERROR] 2026-10-25 User not found
+[ERROR] 2026-10-25 Failed to connect to database
+[ERROR] 2026-10-25 User not found
+[INFO] 2026-02-30 User logged in
+[WARNING] 2026-13-10 Invalid password attempt
+[ERROR] 2027-01-01 Failed to connect to database
+[WARNING] Invalid password attempt
+[DEBUG] 2026-10-24 Debugging session
+[ERROR] 2026-10-24
+[INFO] 24-10-2026 User logged in
+[WARNING] 2026-00-10 Unauthorized access attempt
+[ERROR] 2026-10-24 
+[INFO] 2026-11-31 Dashboard loaded
